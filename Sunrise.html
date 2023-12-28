@@ -390,8 +390,11 @@
       newCloud.style.top = cloudTop + "%";
       cloudsContainer.appendChild(newCloud);
     }
-    var wishes = [...JSON.parse(window.localStorage.getItem('wish'))];
     function submitWish() {
+      var wishes = [];
+      if (JSON.parse(window.localStorage.getItem('wish'))) {
+        wishes = [...JSON.parse(window.localStorage.getItem('wish'))];
+      }
       const wishInput = document.getElementById('wishes');
       // const sunriseContainer = document.querySelector('.sunrise-container');
       const wish = wishInput.value;
